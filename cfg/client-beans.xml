@@ -8,5 +8,10 @@ http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
  
     <jaxws:client id="myServiceImpl2"
                   serviceClass="com.spean90.webservice.service.IMyService2"
-                  address="http://localhost/myws2" />
+                  address="http://localhost/ws/myws2" >
+            <jaxws:outInterceptors>
+            	<bean class="com.spean90.webservice.service.test.MyIntercept">
+            	</bean>
+            </jaxws:outInterceptors>
+    </jaxws:client>              
 </beans>
